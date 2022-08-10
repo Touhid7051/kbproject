@@ -9,8 +9,9 @@ django-restframework = "*"
 pillow = "*"
 djangorestframework = "*"
 django-random-id-model = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.8"
+python_version = "*"
