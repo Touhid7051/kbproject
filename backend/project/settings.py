@@ -104,7 +104,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'kbproject',
         'USER': 'postgres',
-        'PASSWORD': 'KB20ks21SL8eaf56',
+        #'PASSWORD': 'KB20ks21SL8eaf56', #for office
+        'PASSWORD': 'qwerty', #for home
         'HOST': 'localhost',
     }
 }
