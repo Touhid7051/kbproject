@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 
 from dashboard.models import User
-from .serializers import UserCreateSerializer
+from .serializers import UserCreateSerializer, UserSerializer
 
 # Create your views here.
 
@@ -24,7 +24,10 @@ class RetriveUserView(APIView):
     permissions_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
-        pass
+        user = request.user 
+        
+        user = UserSerializer(user)
+        return Response(user.data , status= status.HTTP_200_OK)
     
 
         

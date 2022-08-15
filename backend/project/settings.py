@@ -26,8 +26,8 @@ SECRET_KEY = 'm+_mja&hm*)aat@%je6j6nrncxvg^vckn)b1h&$s8)#r&z(8g7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS=['*']
+CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
 
@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'dashboard',
     
     'rest_framework',
+    
+     'corsheaders',
 ]
 #Custom Setting strats
 AUTH_USER_MODEL = 'dashboard.User'
@@ -66,6 +68,8 @@ SIMPLE_JWT = {
 #Custom settings ends
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
